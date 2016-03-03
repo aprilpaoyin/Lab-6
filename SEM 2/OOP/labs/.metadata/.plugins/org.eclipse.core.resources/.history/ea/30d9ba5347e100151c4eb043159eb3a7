@@ -1,0 +1,44 @@
+/*
+ * Making a screen
+ * Author: April Tan Pao Yin
+ * Date: 3/3/16
+ * 
+*/
+package com.lab5.test;
+
+//import javax.swing.*;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
+public class myScreen extends JFrame
+{
+	JButton button1, button2;
+	JTextField txt;
+	JLabel lab;
+	JCheckBox check;
+	JRadioButton radio;
+	
+	
+	//constructor
+	public myScreen(String title)
+	{
+		super(title);
+		
+		setLayout(new FlowLayout());
+		
+		button1 = new JButton("Click Here for 1");
+		add(button1);
+		button2 = new JButton("Click Here for 2");
+		add(button2);
+		
+		txt = new JTextField("\t\t\t\t\t\t\t\t\t\n");
+		add(txt);
+		
+		setVisible(true);
+	}//end cons 1
+}

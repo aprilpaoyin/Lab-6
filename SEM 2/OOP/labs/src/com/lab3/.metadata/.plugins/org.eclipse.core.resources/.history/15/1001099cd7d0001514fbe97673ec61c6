@@ -1,0 +1,16 @@
+package com.lab3.test;
+
+public class Control 
+{
+	public static void main(String args[])
+	{
+		Employee em1 = new Employee("Jane", "Doe", 123, 12.34, "11-Feb");
+		HourlyEmployee em2 = new HourlyEmployee("John", "Doe", 123, 12.34, "11-Feb", 2.5, 3.8);
+		CommissionEmployee em3 = new CommissionEmployee("Jack", "Doe", 123, 12.34, "11-Feb", 4);
+		
+		System.out.println(em1.toString());
+		System.out.println(em2.toString());
+		System.out.println(em3.toString());
+	}
+	
+}

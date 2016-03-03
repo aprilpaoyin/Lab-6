@@ -1,0 +1,29 @@
+package com.lab4.test;
+
+public class DepositAccount extends Account
+{
+	//own attributes
+	private double interestRate;
+	
+	DepositAccount(String accountName, int accountNumber, String sortCode, String branch, boolean inCredit, double acctBalance, double interestRate)
+	{
+		super(accountName, accountNumber, sortCode, branch, inCredit, acctBalance);
+		this.setInterestRate(interestRate);
+	}//end cons 1
+	
+	//method
+	public void withdraw(double amtWithdraw)
+	{
+		System.out.println("You cannot withdraw from a deposit account");
+	}//end withdraw
+
+	public double getInterestRate() 
+	{
+		return interestRate;
+	}
+
+	public void setInterestRate(double interestRate) 
+	{
+		this.interestRate = interestRate;
+	}
+}

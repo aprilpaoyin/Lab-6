@@ -1,0 +1,21 @@
+/****************************************
+*   Prints 'HelloWorld'
+*   Author: April Tan Pao Yin
+*   Date: 28/01/2016
+*****************************************/
+
+package com.lab1.test;
+
+public class HelloWorld 
+{
+	public static void main(String args[])
+	{
+		//System.out.println("Hello World");
+		
+		Vehicle vehicle1 = new Vehicle("Bob Ross");
+		Vehicle vehicle2 = new Vehicle(12345, 250, "Gray", true, 5);
+		//System.out.println(vehicle1.toString());
+		System.out.println(vehicle2.toString());
+		
+	}//end main
+}//end class HelloWorld

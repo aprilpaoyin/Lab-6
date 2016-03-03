@@ -1,0 +1,264 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; This program adds together two 64 bit numbers
+    2 00000000         ; and produces a 64 bit result
+    3 00000000                 AREA             DATA
+    4 00000000         ; define the array length (similar to #define in C)
+    5 00000000         
+    6 00000000 00000000 
+                       HighSum DCD              0
+    7 00000004 00000000 
+                       LowSum  DCD              0
+    8 00000008 00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00 00 00 
+              00       Stack   SPACE            0x100       ; allocate some spa
+                                                            ce for the stack
+    9 00000108         
+   10 00000108         ; The following symols are in the CODE section (ROM,Exec
+                       utable (Thumb), readonly) 
+   11 00000108                 AREA             THUMB,CODE,READONLY
+   12 00000000         ; EXPORTED Symbols can be linked against 
+   13 00000000                 EXPORT           Reset_Handler
+   14 00000000                 EXPORT           __Vectors
+   15 00000000         ; Minimal interrupt vector table follows
+   16 00000000         ; First entry is initial stack pointer (end of stack)
+   17 00000000         ; second entry is the address of the reset handler
+   18 00000000         __Vectors
+   19 00000000 00000100        DCD              Stack+0x100
+   20 00000004 00000000        DCD              Reset_Handler
+   21 00000008         
+   22 00000008         ; Define const data: Note: Little endian
+   23 00000008 9ABCDEF0 
+              12345678 Operand1
+                               DCD              0x9abcdef0,0x12345678
+   24 00000010 ABCDEF01 
+              23456789 Operand2
+                               DCD              0xabcdef01,0x23456789
+   25 00000018         
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   26 00000018         ; 'Main' program goes here
+   27 00000018         Reset_Handler
+   28 00000018         
+   29 00000018 4D07            LDR              R5,=Operand1
+   30 0000001A 4E08            LDR              R6,=Operand2
+   31 0000001C 6828            LDR              R0,[R5]
+   32 0000001E 6832            LDR              R2,[R6]
+   33 00000020 1A80            SUBS             R0,R0,R2
+   34 00000022 4D07            LDR              R5,=Operand1+4
+   35 00000024 4E07            LDR              R6,=Operand2+4
+   36 00000026 6829            LDR              R1,[R5]
+   37 00000028 6832            LDR              R2,[R6]
+   38 0000002A 4191            SBCS             R1,R1,R2
+   39 0000002C 4D06            LDR              R5,=LowSum
+   40 0000002E 6028            STR              R0,[R5]
+   41 00000030 4D06            LDR              R5,=HighSum
+   42 00000032 6029            STR              R1,[R5]
+   43 00000034         
+   44 00000034 E7FE    stop    B                stop
+   45 00000036                 end
+              00 00 00000000 
+              00000000 
+              00000004 
+              00000004 
+              00000000 
+              00000000 
+Command Line: --debug --xref --cpu=Cortex-M0 --apcs=interwork --depend=.\main.d
+ -o.\main.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\PACK\ARM\CMSIS\3.20.4\CMSIS\In
+clude -IC:\Keil\ARM\PACK\Keil\ARMCortex_DFP\0.0.1\Device\Include --predefine="_
+_EVAL SETA 1" --list=.\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA 00000000
+
+Symbol: DATA
+   Definitions
+      At line 3 in file main.s
+   Uses
+      None
+Comment: DATA unused
+HighSum 00000000
+
+Symbol: HighSum
+   Definitions
+      At line 6 in file main.s
+   Uses
+      At line 41 in file main.s
+Comment: HighSum used once
+LowSum 00000004
+
+Symbol: LowSum
+   Definitions
+      At line 7 in file main.s
+   Uses
+      At line 39 in file main.s
+Comment: LowSum used once
+Stack 00000008
+
+Symbol: Stack
+   Definitions
+      At line 8 in file main.s
+   Uses
+      At line 19 in file main.s
+Comment: Stack used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Operand1 00000008
+
+Symbol: Operand1
+   Definitions
+      At line 23 in file main.s
+   Uses
+      At line 29 in file main.s
+      At line 34 in file main.s
+
+Operand2 00000010
+
+Symbol: Operand2
+   Definitions
+      At line 24 in file main.s
+   Uses
+      At line 30 in file main.s
+      At line 35 in file main.s
+
+Reset_Handler 00000018
+
+Symbol: Reset_Handler
+   Definitions
+      At line 27 in file main.s
+   Uses
+      At line 13 in file main.s
+      At line 20 in file main.s
+
+THUMB 00000000
+
+Symbol: THUMB
+   Definitions
+      At line 11 in file main.s
+   Uses
+      None
+Comment: THUMB unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 18 in file main.s
+   Uses
+      At line 14 in file main.s
+Comment: __Vectors used once
+stop 00000034
+
+Symbol: stop
+   Definitions
+      At line 44 in file main.s
+   Uses
+      At line 44 in file main.s
+Comment: stop used once
+6 symbols
+343 symbols in table

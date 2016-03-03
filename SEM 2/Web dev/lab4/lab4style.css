@@ -1,0 +1,35 @@
+p
+{
+	font-size:90%;
+	font-family:arial, sans serif;
+}
+
+aside
+{
+	float:left;
+	margin: 0 .15%;
+	width: 160px;
+}
+
+section
+{
+	float:left;
+	margin: 0 1.5%;
+	width: 550px;
+}
+
+h1
+{
+	color:teal;
+	font-family:arial, sans serif;
+}
+
+h2
+{
+	font-family:arial, sans serif;
+}
+
+h3
+{
+	font-family:arial, sans serif;
+}

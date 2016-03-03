@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lab 3 - Create a form </title> 
+		<link rel="stylesheet" type="text/css" href="lab3_style.css"/>
+	</head>
+	<body>
+		<form>
+			<h1>Lab4 Form</h1><br>
+			<font>* required field</font>
+			<ul>
+				<li>
+					<label for="name">Name: </label>
+					<input type="text" id="name" name="name" class="large"><font>*</font></input>
+				</li>
+				<li>
+					<label for="email">E-mail: </label>
+					<input type="text" id="email" name="email" class="large"><font>*</font></input>
+				</li>
+				<li>
+					<label for="website">Website: </label>
+					<input type="text" id="website" name="website" class="large"></input>
+				</li>
+				<li>
+					<label for="comment">Comment: </label>
+					<textarea rows="4" cols="50"></textarea>
+				</li>
+				<li>
+					<label for="gender"/>Gender: 
+					<input type="radio" name="gender" value="Male"/>Male
+					<input type="radio" name="gender" value="Female"/>Female
+					<font>*</font>
+				</li>
+			</ul>
+			<!--end lab4 form-->
+			<fieldset>
+				<input type="submit" class="submit_form" value="Submit"/>
+			</fieldset>
+		</form>
+	</body>
+</html>

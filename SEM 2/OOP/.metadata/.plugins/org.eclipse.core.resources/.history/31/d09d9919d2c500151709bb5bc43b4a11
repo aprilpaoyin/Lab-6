@@ -1,0 +1,42 @@
+/****************************************
+*   Vehicle class
+*   Author: April Tan Pao Yin
+*   Date: 28/01/2016
+*****************************************/
+
+package com.lab1.test;
+
+public class Vehicle 
+{
+	//attributes
+	String owner;
+	int regisNum;
+	int maxSpeed;
+	String colour;
+	boolean auto;
+	int numWheels;
+	
+	//constructors
+	public Vehicle(String owner)
+	{
+		this.owner = owner;
+		System.out.println(this.owner);
+	}//end 1st constructor
+	
+	Vehicle(int regisNum, int maxSpeed, String colour, boolean auto, int numWheels)
+	{
+		this.regisNum = regisNum;
+		this.maxSpeed = maxSpeed;
+		this.colour = colour;
+		this.auto = auto;
+		this.numWheels = numWheels;
+		
+		System.out.println(this.regisNum + " " + this.maxSpeed + " " + this.colour + " " + this.auto + " " + this.numWheels);
+	}//end 2nd constructor
+	/*
+	toString()
+	{
+		
+	}//end toString 
+	*/
+}//end Vehicle

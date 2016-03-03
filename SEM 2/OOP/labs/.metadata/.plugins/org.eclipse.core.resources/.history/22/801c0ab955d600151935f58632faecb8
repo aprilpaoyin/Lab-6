@@ -1,0 +1,105 @@
+/*
+ * Lab 4
+ * Author: April Tan Pao Yin
+ * Date: 18 February 2016
+ * 
+*/
+package com.lab4.test;
+
+public class Account 
+{
+	//attributes
+	private String accountName;
+	private int accountNumber;
+	private String sortCode;
+	private String branch;
+	private boolean inCredit;
+	private double acctBalance;
+	
+	Account(String accountName, int accountNumber, String sortCode, String branch, boolean inCredit, double acctBalance)
+	{
+		this.setAccountName(accountName);
+		this.setAccountNumber(accountNumber);
+		this.setSortCode(sortCode);
+		this.setBranch(branch);
+		this.setInCredit(inCredit);
+		this.setAcctBalance(acctBalance);
+	}
+	
+	//methods
+	public void deposit(double amtDeposit)
+	{
+		this.acctBalance = this.acctBalance + amtDeposit;
+	}//end deposit
+	
+	public void withdraw(double amtWithdraw)
+	{
+		this.acctBalance = this.acctBalance - amtWithdraw;
+		if (acctBalance < 0)
+		{
+			this.inCredit = false;
+		}//end if
+	}//end withdraw
+	
+	public String getAccountName() 
+	{
+		return accountName;
+	}
+	
+	public void setAccountName(String accountName) 
+	{
+		this.accountName = accountName;
+	}
+
+	public int getAccountNumber() 
+	{
+		return accountNumber;
+	}
+
+	public void setAccountNumber(int accountNumber) 
+	{
+		this.accountNumber = accountNumber;
+	}
+
+	public String getSortCode() 
+	{
+		return sortCode;
+	}
+
+	public void setSortCode(String sortCode) 
+	{
+		this.sortCode = sortCode;
+	}
+
+	public String getBranch() 
+	{
+		return branch;
+	}
+
+	public void setBranch(String branch) 
+	{
+		this.branch = branch;
+	}
+
+	public boolean isInCredit() 
+	{
+		return inCredit;
+	}
+
+	public void setInCredit(boolean inCredit) 
+	{
+		this.inCredit = inCredit;
+	}
+
+	public double getAcctBalance() 
+	{
+		return acctBalance;
+	}
+
+	public void setAcctBalance(double acctBalance) 
+	{
+		this.acctBalance = acctBalance;
+	}
+	
+	
+}

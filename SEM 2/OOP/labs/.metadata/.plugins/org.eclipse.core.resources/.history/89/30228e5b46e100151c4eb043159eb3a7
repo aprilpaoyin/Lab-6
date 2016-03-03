@@ -1,0 +1,10 @@
+package com.lab5.test;
+
+public class constant {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,15 @@
+/****************************************
+*   Prints 'HelloWorld'
+*   Author: April Tan Pao Yin
+*   Date: 28/01/2016
+*****************************************/
+
+package com.lab1.test;
+
+public class HelloWorld 
+{
+	public static void main(String args[])
+	{
+		System.out.println("HelloWorld");
+	}//end main
+}//end class HelloWorld

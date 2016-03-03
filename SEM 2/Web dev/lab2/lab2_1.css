@@ -1,0 +1,27 @@
+body
+{
+	background-color: lightblue;
+	background-image: url("shibespup.jpg");
+}
+
+p
+{
+	border-style: solid;
+	border-bottom: #000000;
+	font-style: italic;
+	font-size: 300%;
+	text-align: center;
+	line-height: 100%;
+}
+
+table
+{
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 50px 150px;
+}
+
+table, th, td
+{
+	border: 2px solid black;
+}
